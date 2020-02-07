@@ -2,14 +2,15 @@ class Student():
     def __init__(self):
         self.user_name = ''  # user_name gets assigned in get_input()
         self.expenses = {  # initialize all values with zero before we ask the user for actual values
-            'tuition' : -1.0,
-            'books' : -1.0,
-            'housing' : -1.0,
-            'transportation' : -1.0,
-            'food' : -1.0,
-            'monthly subscriptions' : -1.0,
+            'tuition': -1.0,
+            'books': -1.0,
+            'housing': -1.0,
+            'transportation': -1.0,
+            'food': -1.0,
+            'monthly subscriptions': -1.0,
             'other': -1.0
         }
+
     def get_input(self):
         default_string = 'Please enter your estimated cost for {} per year as a number without the $ symbol: \n'
         self.user_name = input('Hi! Welcome to this simple post-secondary expenses calculator, what is your name? \n')
@@ -34,13 +35,9 @@ class Student():
         total = 0
         for expense_value in self.expenses.values():
             total += expense_value
-        print(f'{self.user_name}, will need {str(total*4)} dollars at the start of your post-secondary education in order to graduate debt free.')
+        print(f'{self.user_name}, will need {str(total * 4)} dollars at the start of your post-secondary education in order to graduate debt free.')
 
 
 student = Student()
 student.get_input()
 student.calculate_expenses()
-
-
-
-
